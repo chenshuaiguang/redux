@@ -22,7 +22,7 @@
 .App_intro {
   font-size: large;
 }
-.gutter-example .ant-row > div {
+.gutter-example .ant-row >div {
   background: transparent;
   border: 0;
 }
