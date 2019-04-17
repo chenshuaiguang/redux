@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import Cellbox from './maxpages/room_status_box';
-//www
 
 // import { applyMiddleware,createStore } from 'redux';
 import { connect } from 'react-redux'
