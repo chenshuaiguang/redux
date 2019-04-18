@@ -28,6 +28,7 @@ class AppIndex extends Component {
         //     count:0
         // };
         this.state={
+          checked:false,
           x:0,
           y:500,
           day:0,
@@ -147,6 +148,7 @@ class AppIndex extends Component {
      var bol = true
     return (
        <div className="wrap_box" onClick={ this.global.bind(this)}>
+       
        <style>
         {
           // '.box{\
@@ -189,6 +191,14 @@ class AppIndex extends Component {
             <Form>
               <Form.Group inline>
                 <label>Quantity</label>
+                <span className="wrapper_checkbox">
+                    <input onChange={(e)=>{
+                          this.setState({
+                            checked:e.target.checked
+                          })
+                    }} checked={this.state.checked} className="opacity_checkbox" type="checkbox" />
+                    <span className={this.state.checked?"checkbox_inner":"none checkbox_inner"} />
+                  </span>
                 <Form.Field control={Radio} label='One' value='1' checked={this.state.value=== '1'} onChange={this.handleChange.bind(this)} error={bol}/>
                 <Form.Field control={Radio} label='Two' value='2' checked={this.state.value === '2'} onChange={this.handleChange.bind(this)}/>
                 <Form.Field control={Radio} label='Three' value='3' checked={this.state.value === '3'} onChange={this.handleChange.bind(this)}/>
