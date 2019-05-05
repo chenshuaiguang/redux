@@ -125,6 +125,51 @@ class AppIndex extends Component {
   }
   componentDidMount(){
     this.createHeader()
+    console.log('did',this.createTree()) 
+    const menus = [
+      {
+          text : '房态',
+          id : 'roomStatus',
+          subMenu : true,
+          children : [
+              {
+                  id : 'realtime',
+                  text : '实时房态',
+                  rule : 'Rule40',
+                  path : '/realtime',
+                  // component : RealtimeView,
+                  lxIds : {
+                      cid : 'c_pms_s0m7q1fx',
+                      bid : 'b_pms_tsimg3ps_mc',
+                  }
+              },
+              {
+                  id : 'future',
+                  text : '远期房态',
+                  path : '/future',
+                  // component : FutureHome,
+                  rule : 'Rule50',
+                  lxIds : {
+                      cid : 'c_pms_g2ouqe4q',
+                      bid : 'b_pms_qgsqn2pd_mc',
+                  }
+              },
+          ]
+      },
+      {
+          text : '客单',
+          url : '/guestFolio',
+          id : 'guestFolio',
+          path : '/guestFolio',
+          rule : 'Rule30',
+          // component : GuestFolio,
+          lxIds : {
+              cid : '',
+              bid : 'b_pms_0sj6fzmu_mc',
+          }
+      }]
+    console.log('expaned',this.expaned(menus))
+    
   }
   // 通过改变state的状态，会使context自动更新，同时自动更新子子组件中引用的context
   global(){
@@ -133,6 +178,68 @@ class AppIndex extends Component {
     })
     console.log(this.context)
   }
+  createTree=()=>{
+    let responeData = [
+      {"OrgId":569402737950721,"Star":0,"OrgName":"清木","ParentId":492080274702337,"OrgTypeId":1,"InEmergencyMode":false,"Longitude":0.0,"Latitude":0.0,"IsSelected":false,"IsCoverSub":false,"CheckedDirectCount":0,"DirectCount":0,"IsActive":false,"Opened":false,"BeginChargingTimeInUtc":false,"IsBranch":true,"CreateDate":"0001-01-01 00:00:00"},
+      {"OrgId":663168545996806,"Star":0,"OrgName":"恒-倾城酒店","ParentId":492080274702337,"OrgTypeId":1,"InEmergencyMode":false,"Longitude":0.0,"Latitude":0.0,"IsSelected":false,"IsCoverSub":false,"CheckedDirectCount":0,"DirectCount":0,"IsActive":false,"Opened":false,"BeginChargingTimeInUtc":false,"IsBranch":true,"CreateDate":"0001-01-01 00:00:00"},
+      {"OrgId":690376875212801,"Star":0,"OrgName":"波-广州阅海酒店管理有限公司","ParentId":492080274702337,"OrgTypeId":1,"InEmergencyMode":false,"Longitude":0.0,"Latitude":0.0,"IsSelected":false,"IsCoverSub":false,"CheckedDirectCount":0,"DirectCount":0,"IsActive":false,"Opened":false,"BeginChargingTimeInUtc":false,"IsBranch":true,"CreateDate":"0001-01-01 00:00:00"},
+      {"OrgId":750930606620673,"Star":0,"OrgName":"波-锦江之星","ParentId":492080274702337,"OrgTypeId":1,"InEmergencyMode":false,"Longitude":0.0,"Latitude":0.0,"IsSelected":false,"IsCoverSub":false,"CheckedDirectCount":0,"DirectCount":0,"IsActive":false,"Opened":false,"BeginChargingTimeInUtc":false,"IsBranch":true,"CreateDate":"0001-01-01 00:00:00"},
+      {"OrgId":789736727691265,"Star":0,"OrgName":"紫驿","ParentId":492080274702337,"OrgTypeId":1,"InEmergencyMode":false,"Longitude":0.0,"Latitude":0.0,"IsSelected":false,"IsCoverSub":false,"CheckedDirectCount":0,"DirectCount":0,"IsActive":false,"Opened":false,"BeginChargingTimeInUtc":false,"IsBranch":true,"CreateDate":"0001-01-01 00:00:00"},
+      {"OrgId":789848850923521,"Star":0,"OrgName":"浦东新区","ParentId":569402737950721,"OrgTypeId":1,"InEmergencyMode":false,"Longitude":0.0,"Latitude":0.0,"IsSelected":false,"IsCoverSub":false,"CheckedDirectCount":0,"DirectCount":0,"IsActive":false,"Opened":false,"BeginChargingTimeInUtc":false,"IsBranch":true,"CreateDate":"0001-01-01 00:00:00"},
+      {"OrgId":872404043382838,"Star":0,"OrgName":"123","ParentId":569402737950721,"OrgTypeId":1,"InEmergencyMode":false,"Longitude":0.0,"Latitude":0.0,"IsSelected":false,"IsCoverSub":false,"CheckedDirectCount":0,"DirectCount":0,"IsActive":false,"Opened":false,"BeginChargingTimeInUtc":false,"IsBranch":true,"CreateDate":"0001-01-01 00:00:00"},
+      {"OrgId":872740638949392,"Star":0,"OrgName":"test1","ParentId":569402737950721,"OrgTypeId":1,"InEmergencyMode":false,"Longitude":0.0,"Latitude":0.0,"IsSelected":false,"IsCoverSub":false,"CheckedDirectCount":0,"DirectCount":0,"IsActive":false,"Opened":false,"BeginChargingTimeInUtc":false,"IsBranch":true,"CreateDate":"0001-01-01 00:00:00"},
+      {"OrgId":872767578964053,"Star":0,"OrgName":"213","ParentId":569402737950721,"OrgTypeId":1,"InEmergencyMode":false,"Longitude":0.0,"Latitude":0.0,"IsSelected":false,"IsCoverSub":false,"CheckedDirectCount":0,"DirectCount":0,"IsActive":false,"Opened":false,"BeginChargingTimeInUtc":false,"IsBranch":true,"CreateDate":"0001-01-01 00:00:00"},
+      {"OrgId":875710817173505,"Star":0,"OrgName":"恒1","ParentId":663168545996806,"OrgTypeId":1,"InEmergencyMode":false,"Longitude":0.0,"Latitude":0.0,"IsSelected":false,"IsCoverSub":false,"CheckedDirectCount":0,"DirectCount":0,"IsActive":false,"Opened":false,"BeginChargingTimeInUtc":false,"IsBranch":true,"CreateDate":"0001-01-01 00:00:00"},
+      {"OrgId":872703104630798,"Star":0,"OrgName":"test1","ParentId":789848850923521,"OrgTypeId":1,"InEmergencyMode":false,"Longitude":0.0,"Latitude":0.0,"IsSelected":false,"IsCoverSub":false,"CheckedDirectCount":0,"DirectCount":0,"IsActive":false,"Opened":false,"BeginChargingTimeInUtc":false,"IsBranch":true,"CreateDate":"0001-01-01 00:00:00"},
+      {"OrgId":875712301957133,"Star":0,"OrgName":"浦东分区1","ParentId":789848850923521,"OrgTypeId":1,"InEmergencyMode":false,"Longitude":0.0,"Latitude":0.0,"IsSelected":false,"IsCoverSub":false,"CheckedDirectCount":0,"DirectCount":0,"IsActive":false,"Opened":false,"BeginChargingTimeInUtc":false,"IsBranch":true,"CreateDate":"0001-01-01 00:00:00"},
+      {"OrgId":876242593202260,"Star":0,"OrgName":"test31","ParentId":789848850923521,"OrgTypeId":1,"InEmergencyMode":false,"Longitude":0.0,"Latitude":0.0,"IsSelected":false,"IsCoverSub":false,"CheckedDirectCount":0,"DirectCount":0,"IsActive":false,"Opened":false,"BeginChargingTimeInUtc":false,"IsBranch":true,"CreateDate":"0001-01-01 00:00:00"},
+      {"OrgId":872747546968083,"Star":0,"OrgName":"1123","ParentId":872740638949392,"OrgTypeId":1,"InEmergencyMode":false,"Longitude":0.0,"Latitude":0.0,"IsSelected":false,"IsCoverSub":false,"CheckedDirectCount":0,"DirectCount":0,"IsActive":false,"Opened":false,"BeginChargingTimeInUtc":false,"IsBranch":true,"CreateDate":"0001-01-01 00:00:00"},
+      {"OrgId":875766542794756,"Star":0,"OrgName":"拆总部","ParentId":875712301957133,"OrgTypeId":1,"InEmergencyMode":false,"Longitude":0.0,"Latitude":0.0,"IsSelected":false,"IsCoverSub":false,"CheckedDirectCount":0,"DirectCount":0,"IsActive":false,"Opened":false,"BeginChargingTimeInUtc":false,"IsBranch":true,"CreateDate":"0001-01-01 00:00:00"},
+      {"OrgId":875804014706694,"Star":0,"OrgName":"拆分1","ParentId":875766542794756,"OrgTypeId":1,"InEmergencyMode":false,"Longitude":0.0,"Latitude":0.0,"IsSelected":false,"IsCoverSub":false,"CheckedDirectCount":0,"DirectCount":0,"IsActive":false,"Opened":false,"BeginChargingTimeInUtc":false,"IsBranch":true,"CreateDate":"0001-01-01 00:00:00"},
+      {"OrgId":492080274702337,"Star":0,"OrgName":"cpms测试组回归酒店","OrgTypeId":2,"InEmergencyMode":false,"Longitude":0.0,"Latitude":0.0,"IsSelected":false,"IsCoverSub":false,"CheckedDirectCount":0,"DirectCount":0,"IsActive":false,"Opened":false,"BeginChargingTimeInUtc":false,"IsBranch":true,"CreateDate":"0001-01-01 00:00:00"}
+      ]
+    let treeData=[]
+    let arrPid = responeData
+    let arrId = responeData
+    arrPid.map((item) => {
+        let result = arrId.find((item2)=>{
+            return item2.OrgId === item.ParentId
+        })
+        if(result){
+            if(result.children){
+                result.children.push(item)
+            }else{
+                result.children=[]
+                result.children.push(item)
+            }
+        }else{
+            //item是arrPid中的， result.children.push(item)是对arrId的改变，所以arrPid与arrId必须共用一个浅复制的数据源，否则这两个数组没办法共享改变
+            treeData.push(item)
+        }
+    })
+    // function addTitleKey(arr){
+    //     for(var i=0;i<arr.length;i++){
+    //         arr[i]={...arr[i],title : arr[i].OrgName,key : arr[i].OrgId,value : arr[i].OrgId}
+    //         if(arr[i].children){
+    //             addTitleKey(arr[i].children)
+    //         }
+    //     }
+    // }
+    // addTitleKey(treeData)
+    return treeData
+}
+expaned=(data,pid)=>{
+  let routes = []
+    data.forEach(x => {
+        let items = [{ path : x.path, text : x.text, component : x.component, rule : x.rule, id : x.id, url : x.url, pid : pid, lxIds : x.lxIds }]
+        if (x.children) {
+            let map = this.expaned(x.children, x.id)
+            items = [...items, ...map]
+        }
+        routes = [...routes, ...items]
+    })
+    return routes
+}
   render() {
     var styleDiv={
       position: 'absolute',
