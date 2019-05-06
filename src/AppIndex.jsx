@@ -240,6 +240,18 @@ expaned=(data,pid)=>{
     })
     return routes
 }
+// expand=(arr)=>{
+//   let tmpArr=[]
+//   arr.forEach(item=>{
+//       let x = {text : item.text}
+//       tmpArr=[...tmpArr,x]
+//       if(item.children){
+//           let result = this.expand(item.children)
+//           tmpArr=[...tmpArr,...result]
+//       } 
+//   })
+//   return tmpArr 
+// }
   render() {
     var styleDiv={
       position: 'absolute',
